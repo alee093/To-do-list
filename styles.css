@@ -1,0 +1,122 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css");
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'DM Sans', sans-serif;
+  color: var(--color-negro-900);
+}
+:root{
+  --color-gris-claro: #ededed;
+  --color-neutro-claro: #ffffff;
+  --color-negro-900: #1a1a18;
+}
+body{
+  display: flex;
+  justify-content: center;
+  padding: 40px;
+}
+
+/* seccion de todo lo que se ve en la pagina */
+.to-do-seccion-container{
+  box-shadow: 0px 0px 10px -4px var(--color-negro-900);
+  background-color: var(--color-gris-claro);
+  border-radius: 10px;
+  max-height: 500px;
+  width: 500px;
+  padding: 30px 20px 20px 20px;
+}
+
+/* contenedor de "to-do list e input" */
+.to-do-container{
+  background-color: var(--color-neutro-claro);
+  border-radius: 10px 10px 0 0;
+  padding: 10px;
+  box-shadow: 0px 0px 10px -5px var(--color-negro-900);
+}
+.titulo-logo-container{
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.titulo-to-do{
+  font-size: 25px;
+}
+.input-text{
+  height: 30px;
+  padding-left: 10px;
+  border: 1px solid rgb(180, 180, 180);
+  border-radius: 5px;
+  width: 380px;
+}
+.formulario{
+  display: flex;
+  justify-content: space-between;
+}
+.boton-add{
+  height: 30px;
+  width: 50px;
+  border: none;
+  background-color: var(--color-negro-900);
+  color: var(--color-neutro-claro);
+  font-weight: 600;
+  border-radius: 5px;
+}
+.boton-add:hover{
+  box-shadow: 0px 0px 10px -5px var(--color-negro-900);
+}
+.bi-plus-circle{
+  font-size: 25px;
+}
+
+
+/* seccion tareas a completar */
+.to-do-tasks-container{
+  margin-top: 10px;
+  overflow-y: scroll;
+  max-height: 358px;
+  display: flex;
+  flex-direction: column-reverse;
+  gap: 10px;
+}
+.to-do-tasks-container::-webkit-scrollbar{
+  display: none;
+}
+.container-to-do{
+  background-color: var(--color-neutro-claro);
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 30px;
+  box-shadow: 0px 0px 10px -5px var(--color-negro-900);
+}
+.container-checkbox-texto{
+  display: flex;
+  gap: 10px;
+  font-weight: 500;
+}
+.checkbox{
+  transform: scale(1.4);
+}
+.texto-to-do{
+  display: flex;
+  align-items: center;
+}
+.checkbox:checked{
+  accent-color: var(--color-neutro-claro);
+  border-color: black;
+}
+.boton-delete{
+  background-color: var(--color-gris-claro);
+  border: none;
+  height: 25px;
+  width: 60px;
+  border-radius: 5px;
+  color: var(--color-negro-900);
+  font-weight: 600;
+  cursor: pointer;
+}
+.boton-delete:hover{
+  box-shadow: 0px 0px 5px -4px var(--color-negro-900);
+}
