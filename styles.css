@@ -74,11 +74,11 @@ body{
 
 /* seccion tareas a completar */
 .to-do-tasks-container{
-  margin-top: 10px;
+  margin: 10px 0;
   overflow-y: scroll;
   max-height: 358px;
   display: flex;
-  flex-direction: column-reverse;
+  flex-direction: column;
   gap: 10px;
 }
 .to-do-tasks-container::-webkit-scrollbar{
@@ -88,6 +88,7 @@ body{
   background-color: var(--color-neutro-claro);
   display: flex;
   justify-content: space-between;
+  align-items: center;
   padding: 10px 30px;
   box-shadow: 0px 0px 10px -5px var(--color-negro-900);
 }
@@ -99,13 +100,18 @@ body{
 .checkbox{
   transform: scale(1.4);
 }
-.texto-to-do{
+.container-texto-to-do{
   display: flex;
   align-items: center;
+  flex-wrap: wrap;
+  max-width: 300px;
+}
+.texto-to-do{
+  width: 100%;
+  word-break: break-word;
 }
 .checkbox:checked{
-  accent-color: var(--color-neutro-claro);
-  border-color: black;
+  accent-color: green;
 }
 .boton-delete{
   background-color: var(--color-gris-claro);
