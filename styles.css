@@ -91,6 +91,7 @@ body{
   align-items: center;
   padding: 10px 30px;
   box-shadow: 0px 0px 10px -5px var(--color-negro-900);
+  position: relative;
 }
 .container-checkbox-texto{
   display: flex;
@@ -122,7 +123,33 @@ body{
   color: var(--color-negro-900);
   font-weight: 600;
   cursor: pointer;
+  position: absolute;
+  right: 30px;
+  /* display: none; */
 }
-.boton-delete:hover{
-  box-shadow: 0px 0px 5px -4px var(--color-negro-900);
+.container-botones{
+  height: 25px;
+}
+.boton-yes{
+  height: 100%;
+  border: none;
+  padding: 0 10px;
+  border-radius: 5px;
+  background-color: rgb(0, 201, 0);
+  color: var(--color-neutro-claro);
+  font-weight: 600;
+  display: none;
+}
+.boton-no{
+  height: 100%;
+  border: none;
+  padding: 0 10px;
+  border-radius: 5px;
+  background-color: red;
+  color: var(--color-neutro-claro);
+  font-weight: 600;
+  display: none;
+}
+.boton-delete:hover, .boton-no:hover, .boton-yes:hover{
+  box-shadow: 0px 0px 5px -2px var(--color-negro-900);
 }

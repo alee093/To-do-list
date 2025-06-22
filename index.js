@@ -51,25 +51,45 @@ function crearToDo(tarea) {
       </div>
     </div>
     <button class="boton-delete">Delete</button>
+    <div class="container-botones">
+      <button class="boton-yes">Yes</button>
+      <button class="boton-no">No</button>
+    </div>
   `
   // Añadir la tarea al contenedor
   contenedor_to_do_html.appendChild(tarea_div)
 
   // Evento de eliminar tarea
   tarea_div.querySelector(".boton-delete").addEventListener("click", function() {
-    const eliminar_verificacion = confirm("¿Seguro que quieres eliminar?")
-    if (eliminar_verificacion === true) {
-      tarea_div.remove()
-      let array_to_do = JSON.parse(localStorage.getItem("to_do")) || []
-      array_to_do = array_to_do.filter(function(t) {
-        if (t.texto !== tarea.texto) {
-          return true
-        } else {
-          return false
-        }
-      })
-      localStorage.setItem("to_do", JSON.stringify(array_to_do))
-    }
+
+    // Ocultar el botón de eliminar
+    const boton_delete_html = document.querySelector(".boton-delete")
+    boton_delete_html.style.display = "none"
+    // Mostrar los botones de confirmación
+    const boton_yes_html = document.querySelector(".boton-yes")
+    const boton_no_html = document.querySelector(".boton-no")
+    boton_yes_html.style.display = "inline"
+    boton_no_html.style.display = "inline"
+
+    // Evento de confirmación
+    boton_yes_html.addEventListener("click", () =>{
+        tarea_div.remove()
+        let array_to_do = JSON.parse(localStorage.getItem("to_do")) || []
+        array_to_do = array_to_do.filter(function(t) {
+          if (t.texto !== tarea.texto) {
+            return true
+          } else {
+            return false
+          }
+        })
+        localStorage.setItem("to_do", JSON.stringify(array_to_do))
+    })
+    // Evento de cancelación
+    boton_no_html.addEventListener("click", () => {
+      boton_yes_html.style.display = "none"
+      boton_no_html.style.display = "none"
+      boton_delete_html.style.display = "inline"
+    })
   })
 
   // Evento de marcar tarea como completada
@@ -81,6 +101,7 @@ function crearToDo(tarea) {
     texto_to_do_html.style.textDecoration = "line-through red"
   }
 
+  // Evento de marcar tarea como completada
   checkbox_html.addEventListener("change", function(event) {
     let array_to_do = JSON.parse(localStorage.getItem("to_do")) || []
     array_to_do = array_to_do.map(function(t) {
